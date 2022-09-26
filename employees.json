@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "designation": 1,
+            "firstName": "Sana",
+            "lastName": "Sabir"
+        },
+        {
+            "designation": 1,
+            "firstName": "Amna",
+            "lastName": "Abbas"
+        },
+        {
+            "designation": 2,
+            "firstName": "Daniyal",
+            "lastName": "Haider"
+        },
+        {
+            "designation": 2,
+            "firstName": "Ahmed",
+            "lastName": "Riaz"
+        },
+        {
+            "designation": 3,
+            "firstName": "Sharjeel",
+            "lastName": "Khalid"
+        }
+    ]
+}

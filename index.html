@@ -1,0 +1,93 @@
+<html>
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>  
+    <title>User tables</title>
+</head>
+
+<body>
+    <!-- navbar area, for filter input-->
+    <nav class="navbar sticky-top navbar-light bg-light">
+        <div class="container-fluid w-50">
+            <label for="search-user" class="col-sm-2 col-form-label">Search for employee:</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="search-user" placeholder="Enter a name">
+            </div>
+        </div>
+    </nav>
+    <!-- /end of navbar area-->
+    <!-- part for displaying user content-->
+    <div class="container pt-5">
+       
+       
+       <center> <h2 >Employees</h2></center>
+       <button style="margin-bottom: 1em" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#add-user-modal">
+        Create Employee
+    </button>
+       
+        <table class="table" id="employees" style="border: double">
+            <thead>
+                <tr>
+                    <th style="width:20%;" scope="col">#</th>
+                    <th style="width:20%;" scope="col">First</th>
+                    <th style="width:20%;" scope="col">Last</th>
+                    <th style="width:20%;" scope="col">Designation</th>
+                    <th style="width:20%;" scope="col">Action</th>
+                
+                </tr>
+            </thead>
+          <tbody id="employeeData"> 
+
+          </tbody>
+        </table>
+        
+    </div>
+    <!-- /end of displaying content-->
+    <!-- modal area-->
+    <div class="modal fade" id="add-user-modal" tabindex="-1" aria-labelledby="add-user-modal-label" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="add-user-modal-label">Add a new employee</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label>First Name</label>
+                        <input type="text" required class="form-control" id="firstName" placeholder="Sana" onkeydown="return /[a-z ]/i.test(event.key)"  />
+                    </div>
+                    <div class="mb-3">
+                        <label >Last Name</label>
+                        <input type="text" required class="form-control" id="lastName" placeholder="Sabir" onkeydown="return /[a-z ]/i.test(event.key)"  />
+                    </div>
+                    <div class="mb-3">
+                        <label>Designation</label>
+                        <select class="form-select" id="designation">
+                            <option selected disabled value="0">Select a Designation</option>
+                            <option value="1">Admin</option>
+                            <option value="2">HR</option>
+                            <option value="3">Accountant</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary save">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /end of modal area.-->
+</body>
+
+</html>
+<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+<script src="loadEmployees.js"></script>
+<script src="createEmployees.js"></script>
+<script src="removeEmployees.js"></script>
+<script src="search.js"></script>
